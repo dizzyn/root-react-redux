@@ -1,7 +1,7 @@
 import { createStore } from 'redux'; //ES6 import modules
 import React from 'react';
 import ReactDOM from 'react-dom';
- 
+
 //Zobrazovací komponenta
 import App from './components/App';
 
@@ -21,10 +21,11 @@ function todo(state = initialState, action) { //zde využíváme 'defaultní hod
       return [...state, action.task]
 
     case 'REMOVE':
-      //pomocí splice() odebereme prvek z pole, není ale immutable tak jej stejně
-      // jako v 'ADD' větvi vykopírujeme do nového pole pomocí ES6 Spread direktivy
-      state.splice(action.id, 1);
-      return [...state];
+      //pomocí splice() odebereme prvek z pole, ktere jsem si nejprve zkopírovali
+      // pomocí ES6 Spread direktivy
+      var newState = [...state];
+      newState.splice(action.id, 1);
+      return newState;
 
     default:
       //Vracíme stav objektu bezezměny,
