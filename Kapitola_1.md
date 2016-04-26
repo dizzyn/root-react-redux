@@ -40,7 +40,9 @@ Nyní nám webpack vždy když ho zavoláme (přikazem '**webpack**') vyrobí ba
 
 ![Webpack CMD](img/0101-webpack.png)
 
-**Výroba statického bundle.js**
+[*Výroba statického bundle.js*]
+
+
 
 Soubor '**bundle.js**' nalinkujeme do *HTML* souboru '**index.html**', který bude mít následující obsah:
 
@@ -58,7 +60,9 @@ Pokud něco nefunguje tak jak má, zkontrolujte  kód proti [repozitory](https:/
 
 ![Browser](img/0102-test.png)
 
-**Naše stránka**
+[*Naše stránka*]
+
+
 
 Gratuluji, máte nakonfigurovaný *webpack*.
 
@@ -70,7 +74,9 @@ Na konzoli zavolejte '**webpack-dev-server --inline**' (Parametr *--inline* spou
 
 ![CMD Webpack Dev Server](img/0103-webpack-dev-server.png)
 
-**Webpack dev server**
+[*Webpack dev server*]
+
+
 
 Jen pro zajímavost uvádím, že *webpack* se snaží i o takzvaný *hot reload*. Pokud to kód umožní, dojde k aktualizaci bez obnovení stránky.
 
@@ -78,7 +84,9 @@ Pokud změníte kód, průběh aktualizace můžete sledovat na i na konzoli pro
 
 ![Chrome Console](img/0104-webpack-dev-server-update.png)
 
-**Automatická aktualizace stránky**
+[*Automatická aktualizace stránky*]
+
+
 
 Máme tedy připraven adresář projektu, vývojový server a generátor balíčků, který se nám bude hodit až budeme chtít aplikaci zveřejnit ('**webpack --optimize-minimize**' vyrobí minifikovaný balíček). *webpack devserver* samozřejmě není určený na veřejnou produkci.
 
@@ -142,7 +150,9 @@ Pokud bude vše fungovat jak má, uvidíte následující stránku. Pokud ne, zk
 
 ![Chrome](img/0105-es6-code.png)
 
-**Naše stránka s ES6 kódem přeloženým do ES5**
+[*Naše stránka s ES6 kódem přeloženým do ES5*]
+
+
 
 Gratuluji, máte připravený projekt, to není málo. Můžeme začit programovat.
 
