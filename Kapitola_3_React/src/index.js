@@ -1,0 +1,49 @@
+import { createStore } from 'redux'; //ES6 import modules
+import React from 'react';
+import ReactDOM from 'react-dom';
+ 
+//Zobrazovací komponenta
+import App from './components/App';
+
+//tohle je úvodní stav reduceru, dáme do něj dva úkoly
+var initialState = ["První úkol", "Druhý úkol"];
+
+/** Toto je náš reducer - volá se pomocí dispatch(action)
+* @param Object state Aktuální state reduceru (současný stav)
+* @param Object action Akce na kterou jsme zavolali dispatch() (data změny + identifikace akce)
+* @return Object Vracíme nový stav
+*/
+function todo(state = initialState, action) { //zde využíváme 'defaultní hodnotu parametru' z ES6
+  switch (action.type) {
+    case 'ADD':
+      //využijeme Spread ES6 vlastnost a vložíme pole s aktuálním stavem reduceru
+      // do nového pole s novým úkolem - změna je 'immutable'
+      return [...state, action.task]
+
+    case 'REMOVE':
+      //pomocí splice() odebereme prvek z pole, není ale immutable tak jej stejně
+      // jako v 'ADD' větvi vykopírujeme do nového pole pomocí ES6 Spread direktivy
+      state.splice(action.id, 1);
+      return [...state];
+
+    default:
+      //Vracíme stav objektu bezezměny,
+      // akce patrně byla učena pro jiný reducer
+      return state
+  }
+}
+
+// Vytvoříme si náš Store objekt s jediným reducerem.
+// Můžeme na něm volat ouze 3 funkce:
+// - subscribe, getState - pro zjištění stavu aplikace
+// - dispatch - pro změnu stavu aplikace
+var store = createStore(todo);
+
+//Zobrazovací komponenta je vložena do elementu #root
+ReactDOM.render(<App store={store}/>, document.getElementById("root"));
+
+// Toto je jediný způsob jak m%enit stav aplikace. Objekt který vkládáme
+// se jmenuje akce a obsahuje identifikaci a data potřebná pro provedení akce.
+store.dispatch({ type: 'ADD', task: "Třetí úkol" }); //vložíme dva úkoly
+store.dispatch({ type: 'ADD', task: "Čtvrtý úkol" });
+store.dispatch({ type: 'REMOVE', id: 1 }); //odstraníme druhý úkol
