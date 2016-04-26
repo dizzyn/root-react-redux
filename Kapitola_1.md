@@ -38,7 +38,9 @@ A vytvoříme si ještě adresář '**src**' a v něm soubor '**index.js**' kter
 
 Nyní nám webpack vždy když ho zavoláme (přikazem '**webpack**') vyrobí balícek '**bundle.js**'.
 
-![Webpack CMD](img/0101-webpack.png "Výroba statického bundle.js")
+![Webpack CMD](img/0101-webpack.png)
+
+**Výroba statického bundle.js**
 
 Soubor '**bundle.js**' nalinkujeme do *HTML* souboru '**index.html**', který bude mít následující obsah:
 
@@ -54,7 +56,9 @@ Soubor '**bundle.js**' nalinkujeme do *HTML* souboru '**index.html**', který bu
 
 Pokud něco nefunguje tak jak má, zkontrolujte  kód proti [repozitory](https://github.com/dizzyn/root-react-redux) . Pokud vše funguje, na tránce je nápis "Ahoj kamarádi". Soubor '**index.html**' můžete zavolat pomocí svého oblíbeného lokálního *HTTP serveru* nebo pouze otevřít v prohlížeči přimo ze souborového systému.
 
-![Browser](img/0102-test.png"Naše stránka")
+![Browser](img/0102-test.png)
+
+**Naše stránka**
 
 Gratuluji, máte nakonfigurovaný *webpack*.
 
@@ -64,13 +68,17 @@ Vytváření statického '**bundle.js**' není přiliš produktivní přístup k
 
 Na konzoli zavolejte '**webpack-dev-server --inline**' (Parametr *--inline* spouští server na jednodušší *URL*) a v prohlížeči navštivte adresu '**http://localhost:8080**'. Celou stránku nyní dodává *webpack devserver*. Ve chvíli kdy změníte *JS* nebo *HTML*  kód, stránka se automaticky aktualizuje. Trvá to rychleji než výroba bundle, protože *webpack* zpracuje jen soubor, ve kterém došlo ke změně.  Ve chvíli kdy budete mít více kódu v projektu tak to začne to být významný rozdíl.
 
-![CMD Webpack Dev Server](img/0103-webpack-dev-server.png "Webpack dev server")
+![CMD Webpack Dev Server](img/0103-webpack-dev-server.png)
+
+**Webpack dev server**
 
 Jen pro zajímavost uvádím, že *webpack* se snaží i o takzvaný *hot reload*. Pokud to kód umožní, dojde k aktualizaci bez obnovení stránky.
 
 Pokud změníte kód, průběh aktualizace můžete sledovat na i na konzoli prohlížeče.
 
-![Chrome Console](img/0104-webpack-dev-server-update.png "Automatická aktualizace stránky")
+![Chrome Console](img/0104-webpack-dev-server-update.png)
+
+**Automatická aktualizace stránky**
 
 Máme tedy připraven adresář projektu, vývojový server a generátor balíčků, který se nám bude hodit až budeme chtít aplikaci zveřejnit ('**webpack --optimize-minimize**' vyrobí minifikovaný balíček). *webpack devserver* samozřejmě není určený na veřejnou produkci.
 
@@ -132,7 +140,9 @@ Nyní by mělo být možno psát kód v 'ES6', což můžeme standno vyzkoušet.
 
 Pokud bude vše fungovat jak má, uvidíte následující stránku. Pokud ne, zkontrolujte si kód proti [repozitory](https://github.com/dizzyn/root-react-redux).
 
-![Chrome](img/0105-es6-code.png "Naše stránka s ES6 kódem přeloženým do ES5")
+![Chrome](img/0105-es6-code.png)
+
+**Naše stránka s ES6 kódem přeloženým do ES5**
 
 Gratuluji, máte připravený projekt, to není málo. Můžeme začit programovat.
 
