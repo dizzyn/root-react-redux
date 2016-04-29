@@ -14,7 +14,7 @@ Dnes si připravíme adresář projektu a nakonfigurejeme si *webpack*.
 ### 1. Připravíme si adresář
 Vytvoře si nový adresář a nakonfigurujte si *npm* pomocí přikazu '**npm init**' (je třeba mít nainstalovaný *Node.js*) získáte tak '*package.json*' což je důležité, protože *webpack* vám pak umožní používat všechny scripty nainstalované pomocí balíčkového systému *NPM* i v kódu stránky.
 
-> kód celého přikladu si můžete kdykoliv prohlédnout [na Githubu](https://github.com/dizzyn/root-react-redux)
+> kód celého příkladu si můžete prohlédnout [na Githubu](https://github.com/dizzyn/root-react-redux)
 
 ### 2. Připravíme si Webpack
 *Webpack* je utilita, která zabalí všechny potřebné zdrojové kódy do jediného 'bundle'. Navíc umožňuje nakonfigurovat různé transformace a jiné operace s kódem. Jeho výhodou je, že podporuje *NPM* balíčky jak již bylo zmíněno a poskytuje vývojový server, na který si člověk rád zvykne.
