@@ -1,4 +1,4 @@
-import { createStore } from 'redux'; //ES6 import module
+import Redux from 'redux';  //webpack sáhne pro redux do nainstalovaných NPM balíčků
 
 //tohle je úvodní stav reduceru, dáme do něj dva úkoly
 var initialState = ["První úkol", "Druhý úkol"];
@@ -8,12 +8,13 @@ var initialState = ["První úkol", "Druhý úkol"];
 * @param Object action Akce na kterou jsme zavolali dispatch() (data změny + identifikace akce)
 * @return Object Vracíme nový stav
 */
-function todo(state = initialState, action) { //zde využíváme 'defaultní hodnotu parametru' z ES6
+function todo(state = initialState, action) { //zde využíváme 'defaultní hodnotu parametru' z ES6,
+                                              // použije se při prvním zavolání reduceru, kdy je state undefined
   switch (action.type) {
     case 'ADD':
       //využijeme Spread ES6 vlastnost a vložíme pole s aktuálním stavem reduceru
       // do nového pole s novým úkolem - změna je 'immutable'
-      return [...state, action.task]
+      return [...state, action.text]
 
     case 'REMOVE':
       //pomocí splice() odebereme prvek z pole, ktere jsem si nejprve zkopírovali
@@ -33,7 +34,7 @@ function todo(state = initialState, action) { //zde využíváme 'defaultní hod
 // Můžeme na něm volat ouze 3 funkce:
 // - subscribe, getState - pro zjištění stavu aplikace
 // - dispatch - pro změnu stavu aplikace
-let store = createStore(todo);
+var store = Redux.createStore(todo);
 
 // Naše opravdu jednoduchá zobrazovací komponenta vypisuje do konzole a do stránky
 // aktuální stav aplikace
@@ -43,8 +44,8 @@ store.subscribe(function() {
   document.body.innerHTML = "Aktuální stav:<br/>- " + state.join("<br/>- ")
 })
 
-// Toto je jediný způsob jak m%enit stav aplikace. Objekt který vkládáme
+// Toto je jediný způsob jak měnit stav aplikace. Objekt který vkládáme
 // se jmenuje akce a obsahuje identifikaci a data potřebná pro provedení akce.
-store.dispatch({ type: 'ADD', task: "Třetí úkol" }); //vložíme dva úkoly
-store.dispatch({ type: 'ADD', task: "Čtvrtý úkol" });
+store.dispatch({ type: 'ADD', text: "Třetí úkol" }); //vložíme dva úkoly
+store.dispatch({ type: 'ADD', text: "Čtvrtý úkol" });
 store.dispatch({ type: 'REMOVE', id: 1 }); //odstraníme druhý úkol
