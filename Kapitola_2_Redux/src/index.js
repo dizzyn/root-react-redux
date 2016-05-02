@@ -1,4 +1,4 @@
-import Redux from 'redux';  //webpack sáhne pro redux do nainstalovaných NPM balíčků
+import { createStore } from 'redux';  //webpack sáhne pro redux do nainstalovaných NPM balíčků a zpřístupní z něj veřejnou funkci 'createStore'
 
 //tohle je úvodní stav reduceru, dáme do něj dva úkoly
 var initialState = ["První úkol", "Druhý úkol"];
@@ -34,7 +34,7 @@ function todo(state = initialState, action) { //zde využíváme 'defaultní hod
 // Můžeme na něm volat ouze 3 funkce:
 // - subscribe, getState - pro zjištění stavu aplikace
 // - dispatch - pro změnu stavu aplikace
-var store = Redux.createStore(todo);
+var store = createStore(todo);
 
 // Naše opravdu jednoduchá zobrazovací komponenta vypisuje do konzole a do stránky
 // aktuální stav aplikace
