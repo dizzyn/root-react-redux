@@ -70,7 +70,7 @@ Gratuluji, máte nakonfigurovaný *webpack*.
 
 Vytváření statického '**bundle.js**' není přiliš produktivní přístup k vývoji, každé sestavení nějaký čas trvá. *webpack* proto obsahuje i vývojový server, který  bude potřebné aktualizace kódu plynule dodávat do prohlížeče.
 
-Na konzoli zavolejte '**webpack-dev-server --inline**' (Parametr *--inline* spouští server na jednodušší *URL*) a v prohlížeči navštivte adresu '**http://localhost:8080**'. Celou stránku nyní dodává *webpack devserver*. Ve chvíli kdy změníte *JS* nebo *HTML*  kód, stránka se automaticky aktualizuje. Trvá to rychleji než výroba bundle, protože *webpack* zpracuje jen soubor, ve kterém došlo ke změně.  Ve chvíli kdy budete mít více kódu v projektu tak to začne to být významný rozdíl.
+Na konzoli zavolejte '**webpack-dev-server --inline**' (Parametr *--inline* spouští server na jednodušší *URL*) a v prohlížeči navštivte adresu '**http://localhost:8080**'. Celou stránku nyní dodává *webpack devserver*. Ve chvíli kdy změníte *JS* kód, stránka se automaticky aktualizuje. Trvá to rychleji než výroba bundle, protože *webpack* zpracuje jen soubor, ve kterém došlo ke změně.  Ve chvíli kdy budete mít více kódu v projektu tak to začne to být významný rozdíl.
 
 ![CMD Webpack Dev Server](img/0103-webpack-dev-server.png)
 
