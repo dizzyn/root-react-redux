@@ -6,7 +6,7 @@ V minulém díle seriálu jsme si nakonfigurovali *webpack* nad projektovým adr
 ### 1. Instalace Reduxu
 Zavolejte v projektovém adresáři '**npm install redux -save-dev**'. A nainstalovanou knihovnu importujte do souboru *index.js* pomocí *ES6 Modules Import* direktivy:
 
-    import Redux from 'redux';  //webpack sáhne pro Redux do nainstalovaných NPM balíčků
+    import { createStore } from 'redux';  //webpack sáhne pro redux do nainstalovaných NPM balíčků a zpřístupní z něj veřejnou funkci 'createStore'
 
 ### 2. Stav aplikace
 Nejdříve si musíme dobře uvědomit co je to tzv. 'stav aplikace' (*state*). Je to úvodní podoba stránky společně se všemi změnami do okamžiku kdy tento stav posuzujeme. Zahrnuje *DOM elementy*, jejich obsah, pořadí, attributy, javascriptové proměnné apod.
@@ -126,7 +126,7 @@ V konkrétním příkladě může být aplikace navržena například takto: Sta
       }
     }
 
-    var store = Redux.createStore(todo); //zde vytváříme store
+    var store = createStore(todo); //zde vytváříme store
 
     // Naše opravdu jednoduchá zobrazovací komponenta vypisuje do konzole a do stránky
     store.subscribe(function() {

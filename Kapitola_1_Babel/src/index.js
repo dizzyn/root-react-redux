@@ -2,13 +2,13 @@
 //document.write("Ahoj kamarádi")
 
 //Zkušební ES6 kód
- var x = {
-   name: "Viléme"
- };
+var x = [
+    "Viléme"
+];
 
- var y = { //Spread Object direktiva sečte dva objekty
-     ...x,
-    greeting: "Ahoj"
- }; 
+var y = [ //Spread Array direktiva sečte dvě pole
+    ...x,
+    "Ahoj"
+};
 
- document.write(y.greeting + " " + y.name);
+document.write(y[1] + " " + y[0]);
