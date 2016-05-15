@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "Ukázkové kódy k seriálu na našem milém Rootu",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "devserver": "webpack-dev-server --inline"
   },
   "author": "Tom Randus (tom.randus@gmail.com)",
   "license": "MIT",
@@ -24,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/dizzyn/root-react-redux/issues"
   },
-  "homepage": "https://github.com/dizzyn/root-react-redux#readme"
+  "homepage": "https://github.com/dizzyn/root-react-redux#readme",
+  "dependencies": {
+    "webpack": "^1.13.0"
+  }
 }
