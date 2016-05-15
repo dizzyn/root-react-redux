@@ -46,21 +46,15 @@
 
 	"use strict";
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 	//Zkušební kód
 	//document.write("Ahoj kamarádi")
 
 	//Zkušební ES6 kód
-	var x = {
-	  name: "Viléme"
-	};
+	var x = ["Viléme"];
 
-	var y = _extends({}, x, {
-	  greeting: "Ahoj"
-	});
+	var y = [].concat(x, ["Ahoj"]);
 
-	document.write(y.greeting + " " + y.name);
+	document.write(y[1] + " " + y[0]);
 
 /***/ }
 /******/ ]);
