@@ -21,7 +21,7 @@ V důsledku těchto postupů jsou pak data nepředvídatelně poschovávána pro
 
 Z takového přístupu plyne mnoho výhod. Například debugování je velmi snadné, protože všechny změny prochází jediným místem, do kterého můžeme nahlédnout. Navíc můžeme implemenovat funkci *Undo* - vracení akcí zpět, nebo celou aplikaci uložit (serializovat) jako v nějaké počítačové hře.
 
-### 2. API Reduxu
+### 3. API Reduxu
 Při práci s reduxem potkáme tři konstrukce: **store**, **akci** a **reducer**.
 
 #### Store - srdce naší aplikace ####
@@ -100,12 +100,12 @@ Máme zde jedno důležité pravidlo: Pokud reducer provede změnu dat, musí ta
 
 > O immutabilitě si můžete přečíst například ve vynikající knize [JavaScript Allongé](https://leanpub.com/javascriptallongesix) (ebook online zdarma).
 
-### 3. Návrh naší aplikace
+### 4. Návrh naší aplikace
 V konkrétním příkladě může být aplikace navržena například takto: Stavíme aplikaci, která má nakládat s úkoly (todos), vytvoříme si tedy *reducer*, který bude tyto úkoly spravovat, a do něj přidáme podporu pro všechny akce, které je možno s úkoly provádět (přidat nový, smazat, seřadit, smazat vše...). V *reduceru* také nadefinujeme úvodní stav (*initial state*), tím může být například prázdné pole, nebo, jako v našem připadě, pole s nějakými úvodními položkami.
 
 > V případě, že by naše aplikace spravovala i jiné agendy, například kalendář nebo filtr, vytvoříme pro ně vlastní *reducery*.
 
-### 4. Kód aplikace
+### 5. Kód aplikace
 > Kód příkladu s detailními komentáři si můžete prohlédnout [na Githubu](https://github.com/dizzyn/root-react-redux), zde je jeho nejdůležitější část:
 
     var initialState = ["První úkol", "Druhý úkol"]; //tohle je úvodní stav reduceru, dáme do něj dva úkoly
