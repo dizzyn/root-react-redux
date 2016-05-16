@@ -1,9 +1,11 @@
 {
-  "name": "root.cz-react-redux-randus",
+  "name": "zdrojak-react-redux-randus",
   "version": "0.0.0",
   "description": "Ukázkové kódy k seriálu na našem milém Rootu",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "devserver": "webpack-dev-server --inline"
   },
   "author": "Tom Randus (tom.randus@gmail.com)",
   "license": "MIT",
@@ -16,7 +18,8 @@
     "babel-preset-react": "^6.5.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "redux": "^3.5.1"
+    "redux": "^3.5.1",
+    "webpack": "^1.13.0"
   },
   "main": "webpack.config.js",
   "repository": {
