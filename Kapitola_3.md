@@ -21,7 +21,7 @@ Do '**index.html**' vložíme konteiner do kterého budeme renderovat HTML:
 
 A hned react vyzkoušíme:
 
-ReactDOM.render(<div>Ahoj</div>, document.getElementById("root"));
+    ReactDOM.render(<div>Ahoj</div>, document.getElementById("root"));
 
 Nyní si spusťte *webpack dev server* ('**npm run devserver'**) a pokud na stránce uvidíte nápis 'Ahoj', vše funguje jak má. Pokud ne, zkontrolujte si kód a nastavení v [repozitory na githubu](https://github.com/dizzyn/root-react-redux).
 
@@ -30,7 +30,7 @@ React je něco jako šablonovaci systém. Na začátku vyrenderuje HTML, jako ji
 
 Vzpomeňte si na principy *Reduxu* z minulé kapitoly: *Redux* obhospodařuje data ve *store* a ostatní části systému na ně jen nahlížejí. *React* je s takovým přístupem více než kompatibilní. Stačí jen vystavět strom vizuálních komponent a navěsit je na patřičná data.
 
-*React* sám o sobě by nebyl ničím významným bez *jsx* syntaxe, která rozšiřuje *ECMAScript*. Ono '**<div>Ahoj</div>**' z příkladu přeloží *Babel* na: '**    _react2.default.createElement('div', null, 'Ahoj' )**' což už je pochopitelnější konstrukce, ale zase se tak hezky nečte.
+*React* sám o sobě by nebyl ničím významným bez *jsx* syntaxe, která rozšiřuje *ECMAScript*. Ono `<div>Ahoj</div>` z příkladu přeloží *Babel* na: `_react2.default.createElement('div', null, 'Ahoj' )` což už je pochopitelnější konstrukce, ale zase se tak hezky nečte.
 
 ### 3. Vytváříme strom komponent:
 Naším cílem je rozdělit prezentační vrstvu na logické celky. V aplikaci chceme mít list úkolů, každá jeho položka bude mít tlačítko pro odstranění, dále pak formulář na vkládání nového úkolu, respektive *input* a *tlačítko* a to je vše.
@@ -89,13 +89,13 @@ V kódu také vidíme property "**this.props**", které obsahují konfiguraci ko
     };
 
 V kódu vidíme metodu *render*, která vykresluje list *UL* s položkami z pole. Tyto položky jsou instance komponenty *Item* a vidíme také, jak jsou vyplňovány zmíněné property. Pojďme to probrat postupně:
-- **removeItem={}** na straně volání komponenty nastaví propertu, **this.props.removeItem** uvnitř komponenty propertu přečte.
-- Komponenty se píší s velkým písmenem **<Item/>** tagy HTML s malým **<div>**
-- **this.props** obsahují konfiguraci zvenčí, **this.state** obsahuje stav komponenty, po každé jeho změně se komponenta přerenderuje.
-- *this.state* se nastavuje takto: **this.setState({todos: [] });** a čte takto: **this.state.todos**.
+- `removeItem={}` na straně volání komponenty nastaví propertu, `this.props.removeItem` uvnitř komponenty propertu přečte.
+- Komponenty se píší s velkým písmenem `<Item/>` tagy HTML s malým `<div>`
+- `this.props` obsahují konfiguraci zvenčí, `this.state` obsahuje stav komponenty, po každé jeho změně se komponenta přerenderuje.
+- `this.state` se nastavuje takto: `this.setState({todos: [] });` a čte takto: `this.state.todos`.
 - Komponenta je navěšená na **store** pomocí funkce **subscribe**, kterou znáte z předchozího dílu seriálu.
 - Atribut s názvem **key** obsahuje unikátní hodnotu a pomáhá reactu optimálně renderovat opakující se koponenty.
-- *Store* se do komponenty dostal jako properta, stejně tak funkce **removeItem**.
+- `Store` se do komponenty dostal jako properta, stejně tak funkce `removeItem`.
 
  Pojďme se podívat kde se tato komponenta volá.
 
@@ -158,4 +158,4 @@ Pokud se vám formulář nepodařilo napsat, podívejte se do  [repozitory](http
 
 A jsme úpně na konci.  Gratuluji. Takto se píší ty nejednodušší React komponenty. Budu rád za veškeré poznámky a návrhy v komentářích. Přeji hodně štěstí s Reactem a Reduxem a přidávám na konec jednu poznámku z konference *React Europe ´16*:
 
-React + Redux nemají API pokrývající všechny aspekty vývoje aplikací. Jsou návrhovým vzorem a jeho implementací. Pokud knihovnám porozumíte a přijmete je, mohou vám posloužit jako základ vaší aplikace.
+> React + Redux nemají API pokrývající všechny aspekty vývoje aplikací. Jsou návrhovým vzorem a jeho implementací. Pokud knihovnám porozumíte a přijmete je, mohou vám posloužit jako základ vaší aplikace.
